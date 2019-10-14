@@ -1,0 +1,95 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "user-manage-ms",
+        "description": "Microservice to manage all user data",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api/v1",
+            "description": "For running locally"
+        },
+        {
+            "url": "http://{ipOrHost}:3000/api/v1",
+            "description": "For deployment",
+            "variables": {
+                "ipOrHost": {
+                    "default": "localhost",
+                    "description": "The IP or host for deployment"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "summary": "Returns all users registered",
+                "description": "It should return the info of all the users registered excluding the security inoformation.",
+                "operationId": "getAllUsers",
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add a new user",
+                "description": "It should create all the user",
+                "operationId": "addUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schema/User"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {}
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "dateOfJoining": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "type": "object"
+                    },
+                    "info": {
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    }
+}

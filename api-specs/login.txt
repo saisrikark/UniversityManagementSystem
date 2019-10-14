@@ -1,0 +1,35 @@
+#API Specification for Login-Authentication-Authorization
+
+1. 
+API NAME : loginAuth
+DESCRIPTION : A login api to validate username and password sent from client side
+BASE PATH : /login
+RESOURCE : /authenticate
+METHOD/S : [POST]
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+    "username" : "some username"
+    "password" : ""
+}
+RESPONSE (JSON) : 
+
+2.
+API NAME : userAuthorization
+DESCRIPTION : A login api to check if the user has authorization to do an activity
+BASE PATH :
+RESOURCE : 
+METHOD : 
+ERROR :
+CONTENT-TYPE (JSON):
+RESPONSE (JSON) :
+
+3.
+API NAME : changeAuth
+DESCRIPTION : A login api to change authorization level of a user
+BASE PATH : 
+RESOURCE : 
+METHOD : 
+ERROR : 
+CONTENT-TYPE (JSON): 
+RESPONSE (JSON) : 

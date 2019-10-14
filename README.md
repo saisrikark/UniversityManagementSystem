@@ -1,2 +1,7 @@
-# UniversityManagementSystem
-Course project for Software Engineering 2019
+# Edu Breeze
+
+**Course Project for Group 6 for the subject, Software Engineering.**
+
+
+**Requirements:**
+* TBD
