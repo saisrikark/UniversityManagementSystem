@@ -1,4 +1,23 @@
 {
-	'name':'hello',
-	'service':'microservices'
+	"name": "blog-ms"
+}
+"schema": {
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"dateOfJoining": {
+			"type": "string"
+		},
+		"role": {
+			"type": "string"
+		},
+		"permissions": {
+			"type": "object"
+		},
+		"info": {
+			"type": "object"
+		}
+	}
 }

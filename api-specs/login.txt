@@ -13,23 +13,33 @@ CONTENT-TYPE (JSON) :
     "password" : ""
 }
 RESPONSE (JSON) : 
+{
+    student data excluding password
+}
 
 2.
-API NAME : userAuthorization
-DESCRIPTION : A login api to check if the user has authorization to do an activity
-BASE PATH :
-RESOURCE : 
-METHOD : 
+API NAME : userAuthorizationOnResource
+DESCRIPTION : A login api to check if the user has authorization to do an activity on a resource
+BASE PATH : /authorization
+RESOURCE : /onresource/{resourceID}
+METHOD : [GET]
 ERROR :
 CONTENT-TYPE (JSON):
 RESPONSE (JSON) :
+{
+    "response" : ""//to be defined
+}
+
 
 3.
-API NAME : changeAuth
-DESCRIPTION : A login api to change authorization level of a user
-BASE PATH : 
-RESOURCE : 
-METHOD : 
+API NAME : logout
+DESCRIPTION : An api to logout a user
+BASE PATH : /login
+RESOURCE : /logout
+METHOD : [GET]
 ERROR : 
 CONTENT-TYPE (JSON): 
 RESPONSE (JSON) : 
+{
+    "response" : "what happened"
+}

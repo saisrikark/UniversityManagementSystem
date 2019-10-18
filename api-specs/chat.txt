@@ -1,0 +1,84 @@
+1)
+API NAME : sendMessage
+DESCRIPTION : api to send message
+BASE PATH : /api/v1/chats/{courseId}
+METHOD/S : [POST]
+RESPONSE CODE: 201,400,405
+CONTENT-TYPE (JSON) :
+{
+    "text" : "text content";
+}
+RESPONSE (JSON) :
+{
+"chat uploaded successfully"    
+}
+
+2)
+API NAME : deleteChat
+DESCRIPTION : api to delete a message
+BASE PATH : /api/v1/chats/{chatId}
+METHOD/S : [DELETE]
+RESPONSE CODE: 200,400,405
+CONTENT-TYPE (JSON) :
+{}
+RESPONSE (JSON) :
+{}
+
+3)
+API NAME : likeMessage
+DESCRIPTION : api to like message
+BASE PATH : /api/v1/chats/like
+METHOD/S : [PUT]
+RESPONSE CODE: 201,400,405
+CONTENT-TYPE (JSON) :
+{
+    1234 // chatID
+}
+RESPONSE (JSON) :
+{}
+
+4)
+API NAME : addTeachertoChat
+DESCRIPTION : list the details of all the offered companies for a student
+BASE PATH : /api/v1/chats/{courseId}
+METHOD/S : [POST]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{
+   1234 // teacherId
+}
+RESPONSE (JSON) :
+{
+    "teacher added successfully"
+}
+
+5)API NAME : editMessage
+DESCRIPTION : api to edit message
+BASE PATH : /api/v1/chats/edit{chatId}
+METHOD/S : [POST]
+RESPONSE CODE: 201,400,405
+REQUEST:
+{
+    "text content"
+}
+
+RESPONSE (JSON) :
+{
+    "chat edited successfully"
+}
+
+6)
+API NAME : comments
+DESCRIPTION : add comments to message
+BASE PATH : /api/v1/chats/comment{chatId}
+METHOD/S : [POST]
+RESPONSE CODE: 201,400,405
+REQUEST:
+{
+    "text content"
+}
+
+RESPONSE (JSON) :
+{
+    "commentd edited successfully"
+}

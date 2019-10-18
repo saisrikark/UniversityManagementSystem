@@ -1,0 +1,106 @@
+1)
+API NAME : registeredCompanyName
+DESCRIPTION : list the name of all the companies registered by a student
+BASE PATH : /api/v1/plac/name
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{
+    1234 // studentId
+}
+RESPONSE (JSON) :
+{
+    "companyName":"type";
+}
+
+2)
+API NAME : tierWiseTotalCompany
+DESCRIPTION : list the number of companies in each tier registered by a student
+BASE PATH : /api/v1/plac/totalComp
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ 1234 // studentId}
+RESPONSE (JSON) :
+{
+ "tier1": 12
+ "tier2": 5
+ "tier2": 1
+}
+
+3)
+API NAME : FTofferedCompanyName
+DESCRIPTION : list the details of all the offered companies for a student
+BASE PATH : /api/v1/plac/FTofferName
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{
+    1234 // studentId
+}
+RESPONSE (JSON) :
+{
+    "companyName":"abc";;
+    "type": "core";
+    "tier": "1";
+    "CTC": "16"
+}
+
+4)
+API NAME : InternOfferedCompanyName
+DESCRIPTION : list the details of all the offered companies for a student
+BASE PATH : /api/v1/plac/internOfferName
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{
+    1234 // studentId
+}
+RESPONSE (JSON) :
+{
+    "companyName":"abc";
+    "type": "core";
+    "tier": "1";
+    "CTC": "16"
+}
+
+5)
+API NAME : totalJobOffers
+DESCRIPTION : list the total number of job offers received by a student
+BASE PATH : /api/v1/plac/totalOffers
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ 1234 // studentId}
+RESPONSE (JSON) :
+{
+ "fullTime": 1
+ "internship": 1
+}
+
+6)
+API NAME : getCompDetails
+DESCRIPTION : list all the details of a particular company        
+BASE PATH : /api/v1/plac/compDetails
+METHOD/S : [POST]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ "companyName"
+}
+
+RESPONSE (JSON) :
+{
+ "name": "abc"
+ "designation": "Software Engineer"
+ "companySector": "retail"
+ "modeOfSelection": "interview"
+ "FT" : "yes"
+ "internship": "no"
+ "compensation": "10lacs"
+ "website": "abc.xyz.com"
+}
+
+
+
+
+

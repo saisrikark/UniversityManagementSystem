@@ -1,0 +1,71 @@
+##Blog api-spec##
+blogarticleschema :
+{
+    "identifier" : "some random identifier",
+    "category" : "general or classification",
+    "article info" : "some random info",
+    "comments" : ["list", "of", "comments", "in", "order", "last uploaded first"],
+    "time uploaded" : some time format,
+    "upvotes" : some integer value
+    "owner" : "userid of the owner"
+}
+
+TO DO
+create blog, 
+
+1. 
+API NAME : createBlogArticle
+DESCRIPTION : An api to create a an article 
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : []
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+}
+RESPONSE () : 
+{
+}
+
+2. 
+API NAME : deleteBlogArticle
+DESCRIPTION : An api to delete an article 
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : []
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+}
+RESPONSE () : 
+{
+}
+
+3. 
+API NAME : getAllBlogArticlesByUsername
+DESCRIPTION : An api to get all articles of a particular user 
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : []
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+}
+RESPONSE () : 
+{
+}
+
+4. 
+API NAME : upvoteBlogArticle
+DESCRIPTION : Upvote an article
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : []
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+}
+RESPONSE () : 
+{
+}
+

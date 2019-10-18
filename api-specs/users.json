@@ -21,11 +21,24 @@
             }
         }
     ],
+    "tags": [
+        {
+            "name": "users",
+            "description": "All APIs for handling users"
+        },
+        {
+            "name": "permissions",
+            "description": "All endpoints to handle permissions"
+        }
+    ],
     "paths": {
         "/users": {
             "get": {
+                "tags": [
+                    "users"
+                ],
                 "summary": "Returns all users registered",
-                "description": "It should return the info of all the users registered excluding the security inoformation.",
+                "description": "It should return the info of all the users registered excluding the security information.",
                 "operationId": "getAllUsers",
                 "responses": {
                     "200": {
@@ -35,7 +48,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/User"
+                                        "$ref": "#/components/schemas/UserForFrEnd"
                                     }
                                 }
                             }
@@ -44,22 +57,136 @@
                 }
             },
             "post": {
+                "tags": [
+                    "users"
+                ],
                 "summary": "Add a new user",
-                "description": "It should create all the user",
+                "description": "It should create a user.",
                 "operationId": "addUser",
                 "requestBody": {
+                    "description": "Information to be added. If password on first login set the lastChanged in password to '1970-01-01T00:00:00.000Z'",
+                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schema/User"
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "dateOfJoining": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "object",
+                                        "properties": {
+                                            "plainT": {
+                                                "type": "string"
+                                            },
+                                            "lastChanged": {
+                                                "type": "string",
+                                                "default": "1970-01-01T00:00:00.000Z"
+                                            },
+                                            "role": {
+                                                "type": "string"
+                                            },
+                                            "permissions": {
+                                                "type": "object"
+                                            },
+                                            "info": {
+                                                "type": "object"
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 },
                 "responses": {
                     "200": {
-                        "description": "Successful Operation",
-                        "content": {}
+                        "description": "Successful Operation. Return the _id of the created user",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/searchByPara/{para}": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Returns a user based on parameter=[byName, byId, byUName]",
+                "operationId": "getUserByParam",
+                "description": "Returns the user object excluding the security details of a user based on parameter",
+                "parameters": [
+                    {
+                        "name": "para",
+                        "in": "path",
+                        "description": "Has to be one of [byName, byId, byUName]",
+                        "required": true,
+                        "example": "byName",
+                        "schema": {
+                            "type": "string",
+                            "example": "byName"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Will be used when used along with byName",
+                        "example": "Shashank Prabhakar",
+                        "schema": {
+                            "type": "string",
+                            "example": "hashank Prabhakar"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Will be used when used along with byId",
+                        "example": "a1c31a32b2c545e44b2bc6f56c53ad2",
+                        "schema": {
+                            "type": "string",
+                            "example": "a1c31a32b2c545e44b2bc6f56c53ad2"
+                        }
+                    },
+                    {
+                        "name": "uname",
+                        "in": "query",
+                        "description": "Will be used when used along with byUname",
+                        "example": "shashankp",
+                        "schema": {
+                            "type": "string",
+                            "example": "shashankp"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Found the required user.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {}
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -70,14 +197,29 @@
             "User": {
                 "type": "object",
                 "properties": {
+                    "username": {
+                        "type": "string",
+                        "description": "username format. no spaces"
+                    },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Full Name"
                     },
                     "dateOfJoining": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "1970-01-01T00:00:00.000Z"
                     },
                     "password": {
-                        "type": "string"
+                        "type": "object",
+                        "properties": {
+                            "plainT": {
+                                "type": "string"
+                            },
+                            "lastChanged": {
+                                "type": "string",
+                                "default": "1970-01-01T00:00:00.000Z"
+                            }
+                        }
                     },
                     "role": {
                         "type": "string"
@@ -86,6 +228,27 @@
                         "type": "object"
                     },
                     "info": {
+                        "type": "object"
+                    },
+                    "_id": {
+                        "type": "string",
+                        "description": "MongoDB _id"
+                    }
+                }
+            },
+            "UserForFrEnd": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "dateOfJoining": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    },
+                    "permissions": {
                         "type": "object"
                     }
                 }
