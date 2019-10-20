@@ -73,9 +73,10 @@ def loginSubmission():
                 code = 200
                 token = generateToken()
                 saveToLoggedInUser(mongoResponse["userId"], token)
-                response["token"] = token
+                response["userName"] = mongoResponse["userName"]
                 response["userId"] = mongoResponse["userId"]
-                response["userType"] = mongoResponse["userType"]
+                response["role"] = mongoResponse["role"]
+                response["token"] = token
             else:
                 code = 401 # Invalid credentials
     else:
@@ -114,15 +115,15 @@ operation : C R U D
 resource id
 token
 userId of person sending the request
-userType - 0 , 1, 2 (student , teacher, management)
+role - 0 , 1, 2 (student , teacher, management)
 
 response - can do or not
 '''
-def matchPermissionLevel(userType, operation):
+def matchPermissionLevel(role, operation):
     ret = False
-    if(userType == '2'): # For management
+    if(role == '2'): # For management
         ret = True
-    elif(userType == '1'): # For teachers
+    elif(role == '1'): # For teachers
         if(operation in ['C', 'R', 'U']):
             ret = True
     else: # For students
@@ -145,7 +146,7 @@ def userAuthorizationOnResource():
     resourceType = request.json["resourceType"]
     resourceOwnerId = request.json["resourceOwnerId"]
     token = request.json["token"]
-    userType = request.json["userType"]
+    role = request.json["role"]
     if(not checkForResource(resourceId, resourceType)):
         code = 404
         response = {"access" : 0}
@@ -157,7 +158,7 @@ def userAuthorizationOnResource():
     elif(requesterId == resourceOwnerId):
         code = 200
         response = {"access" : 1}
-    elif(matchPermissionLevel(userType, operation)):
+    elif(matchPermissionLevel(role, operation)):
         code = 200
         response = {"access" : 1}
     else:

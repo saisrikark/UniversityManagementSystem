@@ -9,9 +9,18 @@ REQUEST(JSON) :
     1234 // studentId
 }
 RESPONSE (JSON) :
-{
-    "companyName":"type";
-}
+[
+    {
+    "companyName":"abc",
+    "tier":"1"
+    }
+    {
+    "companyName":"xyz",
+    "tier":"2"
+    }
+    
+
+]
 
 2)
 API NAME : tierWiseTotalCompany
@@ -39,12 +48,14 @@ REQUEST(JSON) :
     1234 // studentId
 }
 RESPONSE (JSON) :
-{
-    "companyName":"abc";;
-    "type": "core";
-    "tier": "1";
-    "CTC": "16"
-}
+[
+    {
+        "companyName":"abc";;
+        "type": "core";
+        "tier": "1";
+        "CTC": "16"
+    }
+]
 
 4)
 API NAME : InternOfferedCompanyName
@@ -57,12 +68,14 @@ REQUEST(JSON) :
     1234 // studentId
 }
 RESPONSE (JSON) :
-{
-    "companyName":"abc";
-    "type": "core";
-    "tier": "1";
-    "CTC": "16"
-}
+[
+    {
+        "companyName":"abc";
+        "type": "core";
+        "tier": "1";
+        "CTC": "16"
+    }
+]
 
 5)
 API NAME : totalJobOffers
@@ -97,6 +110,7 @@ RESPONSE (JSON) :
  "FT" : "yes"
  "internship": "no"
  "compensation": "10lacs"
+ "tier": "1"
  "website": "abc.xyz.com"
 }
 
