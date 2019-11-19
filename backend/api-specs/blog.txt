@@ -1,0 +1,165 @@
+##Blog api-spec##
+blogarticleschema :
+{
+    "title" : "title of the blog"
+    "tags" : ["tag1", "tag2", "tag3", "tag4"] // Indicated what the blog is about
+    "resourceID" : "some random identifier", #### Security for authorization
+    "ownerId" : "userid of the owner", ### Security for authorization
+    "ownerName" : "name of the owner", ### Security for authorization
+    "category" : "general or classification",
+    "info" : "some random info that the user enters",
+    "commentId" : [238947, 23847, 12839, 910213, 5678, 1234],
+    "comments" : ["list", "of", "comments", "in", "order", "last uploaded first"],
+    "commentsUploadTime" = ["time1", "time2", "time3"] // Same order as above
+    "timeUploaded" : some time format,
+    "upvotes" : some integer value,
+    "upvotersId" : [],
+    "downvotes" : some integer value,
+    "downvotersId" : []
+}
+
+TO DO
+create blog, deleteBlogArticle, getAllBlogArticlesByUsername
+upvoteBlogArticle, 
+
+1. 
+API NAME : createBlogArticle
+DESCRIPTION : An api to create a an article 
+BASE PATH : /blog
+RESOURCE : /createBlog
+METHOD/S : ['POST']
+CODE : 
+CONTENT-TYPE (JSON) : 
+{
+    "title" : "title of the blog"
+    "tags" : ["tag1", "tag2", "tag3", "tag4"] // Indicated what the blog is about
+    "ownerId" : "userid of the owner", ### Security for authorization
+    "ownerName" : "name of the owner", ### Security for authorization
+    "category" : "general or classification", 0/1
+    "info" : "some random info that the user enters"
+    "token" : token value
+}
+RESPONSE (JSON) : 
+{
+    "resourceId" : "the id generated for the blog"
+}
+
+2. 
+API NAME : deleteBlogArticle
+DESCRIPTION : An api to delete an article 
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : ['POST']
+CODE : 401, 404, 200 
+CONTENT-TYPE (JSON) : 
+{
+
+}
+RESPONSE () : 
+{
+    "res" : "deleted" / "not found" / 
+}
+
+3. 
+API NAME : getAllArticlesByUserId
+DESCRIPTION : An api to get all articles of a particular user 
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : []
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+
+}
+RESPONSE () : 
+{
+
+}
+
+4. 
+API NAME : upvoteBlogArticle
+DESCRIPTION : Upvote an article
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : ['POST']
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{   
+    ownerId" : "userid of the owner"
+    "resourceID" : "some random identifier"
+}   
+RESPONSE () : 
+{
+    upvotes=upvote+1 #incrementing
+    upvoterId=[#userId added to the list]
+}
+
+5. 
+API NAME : downvoteBlogArticle
+DESCRIPTION : Downvote an article
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : ['POST']
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+    ownerId" : "userid of the owner"
+    "resourceID" : "some random identifier"
+}
+RESPONSE () : 
+{
+    downvotes=downvotes+1 #incrementing
+    downvoterId=[#userId added to the list]
+}
+
+6. 
+API NAME : addComment
+DESCRIPTION : Add comment to blog
+BASE PATH : /blog
+RESOURCE : 
+METHOD/S : ['POST']
+ERROR : 
+CONTENT-TYPE (JSON) : 
+{
+    "ownerId" : "userid of the owner"
+    "resourceID" : "some random identifier"
+    "comments" : ["list", "of", "comments", "in", "order", "last uploaded first"]
+
+}
+RESPONSE () : 
+{
+    comments=[] #Comments been Added to list
+    commentsUploadTime =[] #timebeing updated as per the commented time
+}
+
+7. API NAME : Blog Search
+DESCRIPTION : Search for blog article
+BASE PATH : /blog
+RESOURCE : /searchArticle
+METHOD/S : ['GET']
+CODE : 
+CONTENT-TYPE (JSON) : 
+{
+
+}
+RESPONSE () : 
+{
+
+}
+
+8. 
+API NAME : Recommender system
+DESCRIPTION : Recommend a list of blogs to user
+            // Search on tags
+BASE PATH : /recSys
+RESOURCE : /
+METHOD/S : ['GET']
+CODE : 
+CONTENT-TYPE (JSON) : 
+{
+
+}
+RESPONSE () : 
+{
+
+}

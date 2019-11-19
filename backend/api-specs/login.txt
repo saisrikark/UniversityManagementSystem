@@ -1,0 +1,50 @@
+#API Specification for Login-Authentication-Authorization
+
+1. 
+API NAME : loginAuth
+DESCRIPTION : A login api to validate username and password sent from client side
+BASE PATH : /login
+RESOURCE : /loginSubmission
+METHOD/S : [POST]
+CODE : 
+CONTENT-TYPE (JSON) : 
+{
+    "username" : "some username"
+    "password" : " some pass word hashed using sha"
+}
+RESPONSE (JSON) : 
+{
+    "userName" : "something",
+    "userId" : "something",
+    "role" : "0/1/2"
+    "token" : integer_genereated
+}
+##This response must be stored in localstorage
+##Deleted when logged out
+
+2.
+API NAME : userAuthorizationOnResource
+DESCRIPTION : A login api to check if the user has authorization to do an activity on a resource
+BASE PATH : /authorization
+RESOURCE : /authUserOnResource
+METHOD : ['POST']
+CODE : 200, 404, 401
+CONTENT-TYPE (JSON):
+RESPONSE (JSON) :
+{
+    "access" : 0/1
+}
+
+
+3.
+API NAME : logout
+DESCRIPTION : An api to logout a user
+BASE PATH : /login
+RESOURCE : /logout
+METHOD : ['POST']
+CODE : 200, 404
+CONTENT-TYPE (JSON): 
+RESPONSE (JSON) : 
+{
+    "status" : "Not logged in"/"Logged out"
+}

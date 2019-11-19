@@ -1,0 +1,207 @@
+.Blog_Student_Class {
+	position: absolute;
+	box-sizing: border-box;
+	background: #E5E5E5;
+	width: 100vw;
+    height: 100vh;
+	background-color: rgba(255,255,255,1);
+    overflow: hidden;
+}
+.Logo {
+	width: 100vw;
+	height: 30vh;
+}
+.Line_2 {
+	overflow: visible;
+	position: absolute;
+	width: 1809px;
+	height: 2px;
+	left: 56.5px;
+	top: 961.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.__SE_2019_F6_Class {
+	overflow: visible;
+	text-align: center;
+	font-family: Panton;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(112,112,112,1);
+}
+.Line_7 {
+	overflow: visible;
+	position: absolute;
+	width: 1809px;
+	height: 2px;
+	left: 73.5px;
+	top: 102.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Image_5_Class {
+	opacity: 0.588;
+}
+.Image_5 {
+	position: absolute;
+	overflow: visible;
+	width: 48px;
+	height: 48px;
+	left: 90px;
+	top: 34px;
+}
+.Image_10_Class {
+	opacity: 0.6;
+}
+.Image_10 {
+	position: absolute;
+	overflow: visible;
+	width: 45px;
+	height: 45px;
+	left: 1819px;
+	top: 29px;
+}
+.Group_8_Class {
+	position: absolute;
+	width: 380px;
+	height: 59px;
+	left: 114px;
+	top: 140px;
+	overflow: visible;
+}
+.Rectangle_2 {
+	position: absolute;
+	overflow: visible;
+	width: 380px;
+	height: 59px;
+	left: 0px;
+	top: 0px;
+}
+.Create_a_post_Class {
+	position: absolute;
+	left: 54px;
+	top: 10px;
+	overflow: visible;
+	width: 256px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Panton;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 44px;
+	color: rgba(255,255,255,1);
+}
+.Line_9_Class {
+	opacity: 0.453;
+}
+.Line_9 {
+	overflow: visible;
+	position: absolute;
+	width: 1203px;
+	height: 2px;
+	left: 424.5px;
+	top: 236.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Your_feed_Class {
+	position: absolute;
+	overflow: visible;
+	width: 167px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Panton;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	color: rgba(247,142,54,1);
+}
+.Line_8 {
+	overflow: visible;
+	position: absolute;
+	width: 366px;
+	height: 1px;
+	left: 1483.5px;
+	top: 209.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Image_7_Class {
+	opacity: 0.653;
+}
+.Image_7 {
+	position: absolute;
+	overflow: visible;
+	width: 43px;
+	height: 42px;
+	left: 1500px;
+	top: 149px;
+}
+.Group_22_Class {
+	position: absolute;
+	width: 1692px;
+	height: 501px;
+	left: 158px;
+	top: 357px;
+	overflow: visible;
+}
+.Group_21_Class {
+	position: absolute;
+	width: 1692px;
+	height: 501px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+.The_signal_and_the_noise__By_J_Class {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+	width: 1693px;
+	height: 501px;
+	text-align: left;
+	font-family: Panton;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	color: rgba(247,142,54,1);
+}
+.Group_8_A12_Group_37_Class {
+	position: absolute;
+	width: 256px;
+	height: 51px;
+	left: 674px;
+	top: 441px;
+	overflow: visible;
+}
+.Rectangle_2_A12_Rectangle_124 {
+	position: absolute;
+	overflow: visible;
+	width: 256px;
+	height: 51px;
+	left: 0px;
+	top: 0px;
+}
+.See_all_posts_Class {
+	position: absolute;
+	left: 45px;
+	top: 12px;
+	overflow: visible;
+	width: 167px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Panton;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(255,255,255,1);
+}
+.Rectangle_4_Class {
+	opacity: 0.433;
+}
+.Rectangle_4 {
+	width: 49px;
+	height: 49px;
+	position: absolute;
+	overflow: visible;
+	transform: matrix(1,0,0,1,38,516) rotate(180deg);
+	transform-origin: center;
+}

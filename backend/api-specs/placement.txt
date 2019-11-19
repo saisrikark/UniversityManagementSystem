@@ -1,0 +1,223 @@
+1)
+API NAME : getCompDetails
+DESCRIPTION : list all the details of a particular company        
+BASE PATH : /api/v1/plac/compDetails
+METHOD/S : [POST]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ "name"
+}
+
+RESPONSE (JSON) :
+{
+ "name": "abc"
+ "designation": "Software Engineer"
+ "companySector": "retail"
+ "modeOfSelection": "interview"
+ "FT" : "yes"
+ "internship": "no"
+ "compensation": "10lacs"
+ "tier": "1"
+ "website": "abc.xyz.com"
+}
+
+
+
+2)
+API NAME : registeredCompanyName
+DESCRIPTION : list the name of all the companies registered by a student
+BASE PATH : /api/v1/plac/name?studentId=1234
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{
+    "studentId" //1234
+RESPONSE (JSON) :
+[
+    {
+    "companyName":"abc",
+    "tier":"1"
+    }
+    {
+    "companyName":"xyz",
+    "tier":"2"
+    }
+    
+
+]
+
+3)
+API NAME : tierWiseTotalCompany
+DESCRIPTION : list the number of companies in each tier registered by a student
+BASE PATH : /api/v1/plac/totalComp?studentId=1234
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ "studentId" } // 1234
+RESPONSE (JSON) :
+{
+ "tier1": 12
+ "tier2": 5
+ "tier2": 1
+}
+
+4)
+API NAME : FTofferedCompanyName
+DESCRIPTION : list the details of all the offered companies for a student
+BASE PATH : /api/v1/plac/FTofferName?studentId=1234
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{ "studentId" } // 1234
+RESPONSE (JSON) :
+[
+    {
+        "companyName":"abc";;
+        "type": "core";
+        "tier": "1";
+        "CTC": "16"
+    }
+]
+
+5)
+API NAME : InternOfferedCompanyName
+DESCRIPTION : list the details of all the offered companies for a student
+BASE PATH : /api/v1/plac/internOfferName?studentId=1234
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON) :
+{ "studentId" } // 1234
+RESPONSE (JSON) :
+[
+    {
+        "companyName":"abc";
+        "type": "core";
+        "tier": "1";
+        "CTC": "16"
+    }
+]
+
+6)
+API NAME : totalJobOffers
+DESCRIPTION : list the total number of job offers received by a student
+BASE PATH : /api/v1/plac/totalOffers?studentId=1234
+METHOD/S : [GET]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ "studentId" } // 1234
+RESPONSE (JSON) :
+{
+ "fullTime": 1
+ "internship": 1
+}
+
+
+7)
+API NAME : resumeUpload
+DESCRIPTION : to upload the CV of a student
+BASE PATH : /api/v1/plac/resumeUpload
+METHOD/S : [POST]
+REQUEST
+{
+"file"    // input4.txt
+}
+RESPONSE (JSON) :
+{
+"file uploaded successfully"
+}
+
+8)
+API NAME : studentRegisterToCompnay
+DESCRIPTION : student registring to a particular company
+BASE PATH : /api/v1/plac/register/<company_name>
+METHOD/S : [POST]
+RESPONSE CODE: 200,204,405,413
+REQUEST(JSON)
+{ 
+"name"  //Royal Mehta
+"usn"   //01FB16ECS315
+"branch"  // CS
+"year"    // 4
+"gpa"     //8.68
+}  
+RESPONSE (JSON) :
+{
+ "thanks for registration"
+     OR
+ "Already have an offer"
+    OR
+ "Already registered"
+   OR
+  "incorrect USN"
+}
+
+9)
+API NAME : companyRegister
+DESCRIPTION : Company registring to our product
+BASE PATH : /api/v1/plac/companyRegister
+METHOD/S : [POST]
+
+REQUEST : 
+{
+"name"    //komprise
+"designation"   //software test engineer
+"companySector"  //non-core
+"modeOfSelection" //interview
+"FT" //yes
+"internship"   //yes
+"compensation" //18CTC
+"tier"         // 1
+"website"      //komprise.com
+}
+
+
+RESPONSE (JSON) :
+{
+"thanks for registring with us"
+}
+
+
+10)
+API NAME : resumeDownload
+DESCRIPTION : to download the CV of a student by a particular company
+BASE PATH : /api/v1/plac/download/resume/<resume_name>
+METHOD/S : [GET]
+
+REQUEST(JSON)
+{ } 
+RESPONSE (JSON) :
+{
+
+}
+
+11)
+API NAME : studentList
+DESCRIPTION : list of all the students registered to a particular company
+BASE PATH : /api/v1/plac/list/<company_name>
+METHOD/S : [POST]
+
+REQUEST(JSON)
+{ }
+RESPONSE (JSON) :
+{
+"name1" //Royal Mehta
+"name2" //Sankarshana
+}
+
+12)
+API NAME : getUser
+DESCRIPTION : show the details of the student from the TOKEN given
+BASE PATH : /api/v1/plac/getuser?token=7jfddfd321jkl32l3h 
+METHOD/S : [GET]
+
+REQUEST(JSON)
+{ }
+RESPONSE (JSON) :
+{
+"companies" : [],
+"offers": [],
+"section": "A",
+"semester": 8,
+"studentId": 1239,
+"studentName": "Rohan Sharma"
+}

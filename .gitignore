@@ -15,9 +15,20 @@ _mailinglist
 .pytest_cache/
 .idea/
 docs/_build/
+.vscode
 
 # Coverage reports
 htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+backend/user-ms/__pycache__
+
+edu-breeze-ui/node_modules
+edu-breeze-ui/.DS_Store
+edu-breeze-ui/build
+
+.DS_Store
+
+*.log

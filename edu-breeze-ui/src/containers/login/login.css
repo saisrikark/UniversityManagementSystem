@@ -1,0 +1,22 @@
+.login-logo {
+    height: 15vmin;
+    object-fit: cover;
+    align-self: center;
+}
+
+.logo-subtitle {
+    text-emphasis-color: grey;
+}
+
+.submitButton{
+    border-width: 0px;
+}
+
+.form-container {
+    background-color: #fcfcfc;
+    padding: 5px;
+}
+
+.login-fail-alert {
+    margin: 5px;
+}

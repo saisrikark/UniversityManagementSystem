@@ -1,0 +1,29 @@
+.row > div[class*='col-'] {
+  display: flex;
+  flex:1 0 auto;
+}
+
+h3{
+  text-align: center;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  width: 80%;
+
+}
+
+.card-body{
+  text-overflow: wrap;
+}
+
+.card-text {
+  text-overflow: wrap;
+}
+
+button{
+  background-color: orange !important;
+  
+}
